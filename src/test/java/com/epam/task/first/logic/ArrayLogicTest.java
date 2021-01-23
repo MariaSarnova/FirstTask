@@ -68,31 +68,31 @@ public class ArrayLogicTest {
     @Test
     public void replaceNonzeroElementsByOnesWithSignShouldReplaceNonzeroElementsByOnesWhenPositiveNumbersApplied(){
         Array array = new Array(1,2,4,6,20);
-        List<Integer> expected = new Array(1,1,1,1,1).getElements();
+        Array expected = new Array(1,1,1,1,1);
 
-        List<Integer> actual = arrayLogic.replaceNonzeroElementsByOnesWithSign(array);
+        Array actual = arrayLogic.replaceNonzeroElementsByOnesWithSign(array);
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertTrue(expected.equals(actual));
     }
 
     @Test
     public void replaceNonzeroElementsByOnesWithSignShouldReplaceNonzeroElementsByMinusOnesWhenNegativeNumbersApplied(){
         Array array = new Array(-1,-2,-4,-6,-20);
-        List<Integer> expected = new Array(-1,-1,-1,-1,-1).getElements();
+        Array expected = new Array(-1,-1,-1,-1,-1);
 
-        List<Integer> actual = arrayLogic.replaceNonzeroElementsByOnesWithSign(array);
+        Array actual = arrayLogic.replaceNonzeroElementsByOnesWithSign(array);
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertTrue(expected.equals(actual));
     }
 
     @Test
     public void replaceNonzeroElementsByOnesWithSignShouldReplaceNonzeroElementsByMinusOnesWhenIntegerNumbersApplied(){
         Array array = new Array(-1,-2,0,1,1);
-        List<Integer> expected = new Array(-1,-1,0,1,1).getElements();
+        Array expected = new Array(-1,-1,0,1,1);
 
-        List<Integer> actual = arrayLogic.replaceNonzeroElementsByOnesWithSign(array);
+        Array actual = arrayLogic.replaceNonzeroElementsByOnesWithSign(array);
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertTrue(expected.equals(actual));
     }
 
     @Test
