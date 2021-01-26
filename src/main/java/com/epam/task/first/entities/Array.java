@@ -40,4 +40,14 @@ public class Array {
         return true;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder("[");
+        for (Integer element : elements) {
+            result.append(element).append(", ");
+        }
+        result.append("]");
+        return result.toString();
+    }
+
 }
