@@ -9,10 +9,6 @@ public class ArrayLogic {
     public int findMax(Array array){
         List<Integer> elements =array.getElements();
 
-        if(elements.size()==0){
-            throw new IllegalArgumentException("Array is empty");
-        }
-
         int max = elements.get(0);
         for(Integer element : elements){
             if(max<element){
@@ -26,10 +22,6 @@ public class ArrayLogic {
     public int findMin(Array array){
         List<Integer> elements =array.getElements();
 
-        if(elements.size()==0){
-            throw new IllegalArgumentException("Array is empty");
-        }
-
         int min = elements.get(0);
         for(Integer element : elements){
             if(min>element){
@@ -40,12 +32,8 @@ public class ArrayLogic {
         return min;
     }
 
-    public List<Integer> replaceNonzeroElementsByOnesWithSign(Array array){
+    public Array replaceNonzeroElementsByOnesWithSign(Array array){
         List<Integer> oldElements =array.getElements();
-
-        if(oldElements.size()==0){
-            throw new IllegalArgumentException("Array is empty");
-        }
 
         List<Integer> newElements = new ArrayList<Integer>();
         for(Integer element :oldElements){
@@ -61,33 +49,24 @@ public class ArrayLogic {
                 newElements.add(0);
             }
         }
-
-        return newElements;
+        Array newArray=new Array(newElements);
+        return newArray;
     }
 
     public double findTheAverageOfTheElements(Array array){
         List<Integer> elements =array.getElements();
 
-        if(elements.size()==0){
-            throw new IllegalArgumentException("Array is empty");
-        }
-
-        double average = 0;
         int sum = 0;
         for(Integer element : elements){
             sum+=element;
         }
-        average=(double)sum/elements.size();
+        double average =(double)sum/elements.size();;
 
         return average;
     }
 
     public int findSum(Array array){
         List<Integer> elements =array.getElements();
-
-        if(elements.size()==0){
-            throw new IllegalArgumentException("Array is empty");
-        }
 
         int sum = 0;
         for(Integer element : elements){
@@ -100,9 +79,6 @@ public class ArrayLogic {
     public int findAmountOfPositiveElements(Array array){
         List<Integer> elements =array.getElements();
 
-        if(elements.size()==0){
-            throw new IllegalArgumentException("Array is empty");
-        }
         int amountOfPositive = 0;
         for(Integer element : elements){
             if(element>0){
@@ -116,9 +92,6 @@ public class ArrayLogic {
     public int findAmountOfNegativeElements(Array array){
         List<Integer> elements =array.getElements();
 
-        if(elements.size()==0){
-            throw new IllegalArgumentException("Array is empty");
-        }
         int amountOfNegative = 0;
         for(Integer element : elements){
             if(element<0){

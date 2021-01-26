@@ -21,4 +21,23 @@ public class Array {
         return elements;
     }
 
+
+    public boolean equals(Array array) {
+        List<Integer> thisArray=this.getElements();
+        List<Integer> newArray=array.getElements();
+
+        int thisSize= thisArray.size();
+        int newSize= newArray.size();
+
+        if(thisSize!=newSize){
+            return false;
+        }
+        for(int i=0;i<thisSize;i++){
+            if(!thisArray.get(i).equals(newArray.get(i))){
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
