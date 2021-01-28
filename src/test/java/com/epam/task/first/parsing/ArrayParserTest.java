@@ -15,7 +15,7 @@ public class ArrayParserTest {
 
         Array actual=parser.create(array);
 
-        Assert.assertTrue(actual.equals(expected));
+        Assert.assertEquals(expected,actual);
     }
 
     @Test(expected = IllegalArgumentException.class)

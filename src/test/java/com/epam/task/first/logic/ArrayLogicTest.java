@@ -10,6 +10,9 @@ import java.util.List;
 public class ArrayLogicTest {
 
     private ArrayLogic arrayLogic =new ArrayLogic();
+    private final static Array EXPECTED_ARRAY_WITH_ONES = new Array(1,1,1,1,1);
+    private final static Array EXPECTED_ARRAY_WITH_MINUS_ONES = new Array(-1,-1,-1,-1,-1);
+    private final static Array EXPECTED_ARRAY_WITH_INTEGER_NUMBERS = new Array(-1,-1,0,1,1);
 
     @Test
     public void testFindMaxShouldFindMaxWhenPositiveNumbersApplied(){
@@ -58,41 +61,38 @@ public class ArrayLogicTest {
 
     @Test
     public void testFindMinShouldFindMinWhenIntegerNumbersApplied(){
-        Array array = new Array(-10,0,-50);
+        Array array = new Array(-10,0,50);
 
         int actual = arrayLogic.findMin(array);
 
-        Assert.assertEquals(-50,actual);
+        Assert.assertEquals(-10,actual);
     }
 
     @Test
     public void replaceNonzeroElementsByOnesWithSignShouldReplaceNonzeroElementsByOnesWhenPositiveNumbersApplied(){
         Array array = new Array(1,2,4,6,20);
-        Array expected = new Array(1,1,1,1,1);
 
         Array actual = arrayLogic.replaceNonzeroElementsByOnesWithSign(array);
 
-        Assert.assertTrue(expected.equals(actual));
+        Assert.assertEquals(EXPECTED_ARRAY_WITH_ONES,actual);
     }
 
     @Test
     public void replaceNonzeroElementsByOnesWithSignShouldReplaceNonzeroElementsByMinusOnesWhenNegativeNumbersApplied(){
         Array array = new Array(-1,-2,-4,-6,-20);
-        Array expected = new Array(-1,-1,-1,-1,-1);
 
         Array actual = arrayLogic.replaceNonzeroElementsByOnesWithSign(array);
 
-        Assert.assertTrue(expected.equals(actual));
+        Assert.assertEquals(EXPECTED_ARRAY_WITH_MINUS_ONES,actual);
     }
 
     @Test
     public void replaceNonzeroElementsByOnesWithSignShouldReplaceNonzeroElementsByMinusOnesWhenIntegerNumbersApplied(){
         Array array = new Array(-1,-2,0,1,1);
-        Array expected = new Array(-1,-1,0,1,1);
 
         Array actual = arrayLogic.replaceNonzeroElementsByOnesWithSign(array);
 
-        Assert.assertTrue(expected.equals(actual));
+        Assert.assertEquals(EXPECTED_ARRAY_WITH_INTEGER_NUMBERS,actual);
     }
 
     @Test
